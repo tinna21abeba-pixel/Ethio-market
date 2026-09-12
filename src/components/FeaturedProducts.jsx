@@ -6,7 +6,7 @@ function FeaturedProducts() {
   return (
     <div>
         <h1>Featured Products</h1>
-        <div>
+        <div className='grid'>
             {products.map((product) => (
                 <ProductCard key={product.id} product={product} />
             ))}

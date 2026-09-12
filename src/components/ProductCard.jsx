@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 function ProductCard({product}) {
   return (
     <div>
@@ -8,7 +8,11 @@ function ProductCard({product}) {
         <p>category : {product.category}</p>
         <p>seller : {product.seller}</p>
         <p>location : {product.location}</p>
-        <button className='viewProduct'>view product</button>
+        <Link to={`/product/${product.id}`}
+  className="viewProduct"
+>
+  View Product
+</Link>
     </div>
   )
 }

@@ -17,7 +17,7 @@ function Shop() {
     <input type='text' placeholder='Search products ...' value={search} onChange={(e)=>setSearch(e.target.value)}
     className='search-input'
     />
-    <div className='product-list'>
+    <div className='product-list grid'>
       {filteredProducts.map((product)=>(<ProductCard key={product.id} product={product}/>))}
     </div>
    </main>

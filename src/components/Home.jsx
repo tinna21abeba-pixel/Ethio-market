@@ -8,11 +8,15 @@ function Home() {
   return (
     <>
       <Header />
-      <Shop />
+      
       <main>
         <Hero />
+        
         <Categories />
         <FeaturedProducts />
+<section>
+        <Shop />
+</section>
       </main>
     </>
   );
