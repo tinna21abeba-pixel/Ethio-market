@@ -1,19 +1,767 @@
-body{
-  background-color: darkgrey;
+/* ==========================================================================
+   ETHIO MARKET - Authentic Ethiopian Marketplace Design System
+   Connecting Ethiopian Sellers & Global Shoppers
+   ========================================================================== */
 
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Ethiopian Heritage & Coffee Color Palette */
+  --color-coffee-dark: #1A0D07;
+  --color-coffee-medium: #2C1810;
+  --color-coffee-light: #4A2B1D;
+  --color-gold: #F59E0B;
+  --color-gold-light: #FCD34D;
+  --color-amber: #D97706;
+  --color-terracotta: #C2410C;
+  --color-green: #059669;
+  --color-green-light: #D1FAE5;
+  --color-red: #DC2626;
+  --color-red-light: #FEE2E2;
+  
+  --color-bg: #FAF6F0;
+  --color-card-bg: #FFFFFF;
+  --color-text-main: #1C1917;
+  --color-text-muted: #78716C;
+  --color-border: #E7E0D6;
+  
+  --shadow-sm: 0 2px 4px rgba(44, 24, 16, 0.05);
+  --shadow-md: 0 6px 16px rgba(44, 24, 16, 0.08);
+  --shadow-lg: 0 12px 28px rgba(44, 24, 16, 0.12);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
 }
-header{
-  position: fixed;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.25s ease;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s ease;
+}
+
+input, textarea, select {
+  font-family: inherit;
+}
+
+/* ==========================================================================
+   HEADER & NAVBAR
+   ========================================================================== */
+
+header {
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-}
-.grid{
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-}
-nav{
+  background: rgba(26, 13, 7, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(245, 158, 11, 0.2);
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+header h2 {
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+header h2 span {
+  background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+nav a {
+  color: #E7E0D6;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.5rem 1.1rem;
+  border-radius: var(--radius-sm);
+  transition: all 0.25s ease;
+}
+
+nav a:hover,
+nav a.active {
+  color: #FFFFFF;
+  background: rgba(245, 158, 11, 0.18);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+nav a[href="/cart"] {
+  background: linear-gradient(135deg, var(--color-amber), var(--color-terracotta));
+  color: #FFFFFF;
+  border-radius: 9999px;
+  padding: 0.45rem 1.2rem;
+  font-weight: 700;
+  box-shadow: 0 2px 10px rgba(217, 119, 6, 0.35);
+}
+
+nav a[href="/cart"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.5);
+}
+
+/* ==========================================================================
+   HERO SECTION WITH ETHIOPIAN PRODUCTS BACKGROUND
+   ========================================================================== */
+
+main > section:first-of-type {
+  position: relative;
+  background: 
+    linear-gradient(
+      180deg, 
+      rgba(26, 13, 7, 0.72) 0%, 
+      rgba(44, 24, 16, 0.82) 60%, 
+      rgba(26, 13, 7, 0.95) 100%
+    ),
+    url('/hero-bg.jpg') center center / cover no-repeat;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 6.5rem 1.5rem 5.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 -40px 60px rgba(26, 13, 7, 0.8);
+}
+
+/* Subtitle pill badge */
+main > section:first-of-type > p:first-of-type {
+  display: inline-block;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  color: var(--color-gold-light);
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.4rem 1.4rem;
+  border-radius: 9999px;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  backdrop-filter: blur(6px);
+}
+
+/* Main Heading */
+main > section:first-of-type > h1 {
+  font-size: clamp(2.3rem, 5.5vw, 4rem);
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  max-width: 860px;
+  margin-bottom: 1.5rem;
+  color: #FFFFFF;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+}
+
+/* Descriptive paragraph */
+main > section:first-of-type > p:nth-of-type(2) {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 680px;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Hero Action Buttons */
+main > section:first-of-type > button {
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.95rem 2.2rem;
+  border-radius: var(--radius-md);
+  margin: 0.4rem 0.6rem;
+  display: inline-block;
+}
+
+main > section:first-of-type > button:first-of-type {
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  color: #1A0D07;
+  font-weight: 800;
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.35);
+}
+
+main > section:first-of-type > button:first-of-type:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #FCD34D 0%, #F59E0B 100%);
+  box-shadow: 0 12px 28px rgba(245, 158, 11, 0.5);
+}
+
+main > section:first-of-type > button:nth-of-type(2) {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+}
+
+main > section:first-of-type > button:nth-of-type(2):hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: #FFFFFF;
+  transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   CATEGORIES SECTION
+   ========================================================================== */
+
+main > section:nth-of-type(2) {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 2.5rem;
+}
+
+main > section:nth-of-type(2) > h2 {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--color-coffee-dark);
+  margin-bottom: 1.75rem;
+  position: relative;
+  display: inline-block;
+}
+
+main > section:nth-of-type(2) > h2::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 48px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-gold), transparent);
+  border-radius: 2px;
+}
+
+main > section:nth-of-type(2) > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+main > section:nth-of-type(2) > div > button {
+  background: #FFFFFF;
+  color: var(--color-coffee-dark);
+  border: 1.5px solid var(--color-border);
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+}
+
+main > section:nth-of-type(2) > div > button:hover {
+  background: var(--color-coffee-dark);
+  color: #FFFFFF;
+  border-color: var(--color-coffee-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ==========================================================================
+   FEATURED PRODUCTS SECTION & GRID
+   ========================================================================== */
+
+main > div {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3.5rem;
+}
+
+main > div > h1 {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--color-coffee-dark);
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+main > div > h1::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 48px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-terracotta), transparent);
+  border-radius: 2px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.75rem;
+}
+
+/* Product Card Styling */
+.grid > div {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.grid > div::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--color-gold), var(--color-terracotta));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.grid > div:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-gold);
+  box-shadow: var(--shadow-lg);
+}
+
+.grid > div:hover::before {
+  opacity: 1;
+}
+
+.grid > div > h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-coffee-dark);
+  margin-bottom: 1rem;
+}
+
+.grid > div > p {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.45rem;
+  text-transform: capitalize;
+}
+
+.grid > div > p:first-of-type {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--color-amber);
+  margin-bottom: 0.85rem;
+}
+
+.grid > div > .viewProduct {
+  display: inline-block;
+  text-align: center;
+  background: var(--color-coffee-dark);
+  color: #FFFFFF;
+  font-size: 0.92rem;
+  font-weight: 700;
+  padding: 0.8rem 1.25rem;
+  border-radius: var(--radius-md);
+  margin-top: 1.25rem;
+  transition: all 0.25s ease;
+}
+
+.grid > div > .viewProduct:hover {
+  background: linear-gradient(135deg, var(--color-amber), var(--color-terracotta));
+  box-shadow: 0 6px 18px rgba(217, 119, 6, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   SHOP SECTION
+   ========================================================================== */
+
+main > section:last-of-type {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 5rem;
+}
+
+main > section:last-of-type main {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+main > section:last-of-type h1 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--color-coffee-dark);
+  margin-bottom: 1.5rem;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 0.85rem 1.25rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  outline: none;
+  background: #FAF6F0;
+  color: var(--color-coffee-dark);
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  border-color: var(--color-gold);
+  background: #FFFFFF;
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.15);
+}
+
+/* ==========================================================================
+   CART PAGE STYLING
+   ========================================================================== */
+
+main:has(> h1:first-child:is(:contains('Your Cart'))) {
+  max-width: 960px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+/* General standalone page wrapper */
+body > #root > main,
+body > div > main:not(.main-content) {
+  max-width: 960px;
+  margin: 3.5rem auto;
+  padding: 2.5rem;
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+body > #root > main > h1,
+body > div > main:not(.main-content) > h1 {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--color-coffee-dark);
+  margin-bottom: 1.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--color-border);
+}
+
+/* Cart Items List */
+article {
+  background: #FAF6F0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+article h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--color-coffee-dark);
+  flex: 1;
+}
+
+article p {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-amber);
+}
+
+article button {
+  background: var(--color-red-light);
+  color: var(--color-red);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+}
+
+article button:hover {
+  background: var(--color-red);
+  color: #FFFFFF;
+}
+
+/* Order Summary Box in Cart & Checkout */
+section:has(> h2:first-child) {
+  background: #FAF6F0;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  margin-top: 2rem;
+}
+
+section:has(> h2:first-child) h2 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-coffee-dark);
+  margin-bottom: 1.25rem;
+}
+
+section:has(> h2:first-child) div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+section:has(> h2:first-child) hr {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 1.25rem 0;
+}
+
+section:has(> h2:first-child) p {
+  font-size: 1rem;
+  color: var(--color-text-main);
+  margin-bottom: 0.4rem;
+}
+
+section:has(> h2:first-child) h3 {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--color-coffee-dark);
+  margin-top: 0.75rem;
+}
+
+/* Proceed to Checkout / Continue buttons */
+main a[href="/checkout"],
+main a[href="/checkout/shipping"],
+main a[href="/shop"],
+main a[href="/"] {
+  display: inline-block;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 0.95rem 2rem;
+  border-radius: var(--radius-md);
+  margin-top: 1.5rem;
+  margin-right: 0.75rem;
+}
+
+main a[href="/checkout"],
+main a[href="/checkout/shipping"] {
+  background: linear-gradient(135deg, var(--color-gold), var(--color-amber));
+  color: #1A0D07;
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.35);
+  width: 100%;
+}
+
+main a[href="/checkout"]:hover,
+main a[href="/checkout/shipping"]:hover {
+  background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.45);
+}
+
+main a[href="/shop"] {
+  background: var(--color-coffee-dark);
+  color: #FFFFFF;
+}
+
+main a[href="/shop"]:hover {
+  background: var(--color-coffee-light);
+}
+
+main a[href="/"] {
+  background: #FFFFFF;
+  border: 1.5px solid var(--color-border);
+  color: var(--color-coffee-dark);
+}
+
+main a[href="/"]:hover {
+  background: #FAF6F0;
+  border-color: var(--color-coffee-dark);
+}
+
+/* ==========================================================================
+   SHIPPING FORM STYLING
+   ========================================================================== */
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+form > div:nth-child(1),
+form > div:nth-child(2),
+form > div:nth-child(5) {
+  grid-column: span 2;
+}
+
+form label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-coffee-dark);
+}
+
+form input {
+  padding: 0.85rem 1.1rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: #FAF6F0;
+  font-size: 0.95rem;
+  color: var(--color-text-main);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+form input:focus {
+  border-color: var(--color-gold);
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+}
+
+form button[type="submit"] {
+  grid-column: span 2;
+  background: linear-gradient(135deg, var(--color-green), #047857);
+  color: #FFFFFF;
+  font-size: 1.05rem;
+  font-weight: 800;
+  padding: 1.1rem;
+  border-radius: var(--radius-md);
+  margin-top: 1rem;
+  box-shadow: 0 4px 16px rgba(5, 150, 105, 0.35);
+}
+
+form button[type="submit"]:hover {
+  background: linear-gradient(135deg, #10B981, var(--color-green));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(5, 150, 105, 0.45);
+}
+
+/* ==========================================================================
+   ORDER CONFIRMATION & PRODUCT DETAILS
+   ========================================================================== */
+
+/* Order Confirmed Banner */
+main:has(> h1:is(:contains('Order Confirmed'))) {
+  text-align: center;
+}
+
+/* Product Details Page */
+main:has(> button:is(:contains('Add to Cart'))) {
+  max-width: 680px;
+}
+
+main:has(> button:is(:contains('Add to Cart'))) p {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.6rem;
+}
+
+main:has(> button:is(:contains('Add to Cart'))) p:first-of-type {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--color-amber);
+  margin-bottom: 1.25rem;
+}
+
+main:has(> button:is(:contains('Add to Cart'))) button {
+  background: linear-gradient(135deg, var(--color-gold), var(--color-amber));
+  color: #1A0D07;
+  font-size: 1.05rem;
+  font-weight: 800;
+  padding: 1rem 2.5rem;
+  border-radius: var(--radius-md);
+  margin-top: 1.75rem;
+  width: 100%;
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.3);
+}
+
+main:has(> button:is(:contains('Add to Cart'))) button:hover {
+  background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold));
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  main > section:first-of-type {
+    padding: 4.5rem 1rem 3.5rem;
+  }
+
+  main > section:first-of-type > button {
+    width: 100%;
+    margin: 0.4rem 0;
+  }
+
+  body > #root > main,
+  body > div > main:not(.main-content) {
+    margin: 1.5rem 1rem;
+    padding: 1.5rem;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  form > div:nth-child(n) {
+    grid-column: span 1;
+  }
+
+  form button[type="submit"] {
+    grid-column: span 1;
+  }
 }

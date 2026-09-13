@@ -1,24 +1,27 @@
-import Header from "./Header";
+
 import Hero from "./Hero";
 import Categories from "./Categories";
 import FeaturedProducts from "./FeaturedProducts";
 import Shop from "../pages/Shop";
+import {Outlet} from "react-router-dom";
+
 
 function Home() {
   return (
-    <>
-      <Header />
+    
+    
       
       <main>
+        <Outlet />
         <Hero />
-        
+
         <Categories />
         <FeaturedProducts />
-<section>
-        <Shop />
-</section>
+        <section>
+          <Shop />
+        </section>
       </main>
-    </>
+  
   );
 }
 

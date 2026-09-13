@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 function Hero() {
   return (
     <section>
@@ -14,9 +15,10 @@ function Hero() {
         and connect with buyers locally and internationally.
       </p>
 
-      <button>Start Shopping</button>
+      <Link to="/shop">Start Shopping</Link>
+      <Link to="/sell">Sell on EthioMarket</Link>
 
-      <button>Sell on EthioMarket</button>
+
     </section>
   );
 }
