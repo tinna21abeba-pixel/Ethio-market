@@ -1,23 +1,25 @@
 import React from 'react';
-import {Link, NavLink} from 'react-router-dom'
-import {useCart} from '../context/CartContext'
+import { Link, NavLink } from 'react-router-dom'
+import { useCart } from '../context/CartContext'
+import { useAuth } from '../context/AuthContext'
 
 function Header() {
-  const {cart}=useCart();
+  const { cart } = useCart();
   return (
-   <header>
-    <div>
+    <header>
+      <div>
         <h2>Ethio <span>Market</span></h2>
-    </div>
-    <nav>
+      </div>
+      <nav>
         <Link to="/">Home</Link>
         <NavLink to="/shop">Shop</NavLink>
-         <NavLink to="/sell">Sell</NavLink>
-          <NavLink to="/login">Login</NavLink>
-           <NavLink to="/cart">cart {cart.length}</NavLink>
-           </nav>
-   
-   </header>
+        <NavLink to="/seller">Sell</NavLink>
+        <NavLink to="/login">Login</NavLink>
+        <NavLink to="/register">Register</NavLink>
+        <NavLink to="/cart">cart {cart.length}</NavLink>
+      </nav>
+
+    </header>
   )
 }
 

@@ -16,7 +16,7 @@ function Hero() {
       </p>
 
       <Link to="/shop">Start Shopping</Link>
-      <Link to="/sell">Sell on EthioMarket</Link>
+      <Link to="/seller">Sell on EthioMarket</Link>
 
 
     </section>
