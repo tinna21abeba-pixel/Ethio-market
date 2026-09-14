@@ -52,69 +52,74 @@ function Cart() {
               return (
                 <div
                   key={product.id}
-                  className="bg-white p-4 sm:p-5 rounded-2xl border border-gray-200 shadow-xs flex items-center gap-4 sm:gap-6"
+                  className="bg-white p-4 sm:p-5 rounded-2xl border border-gray-200 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4"
                 >
-                  {/* Item Image */}
-                  <div className="w-20 h-20 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0 border border-gray-200">
-                    <img
-                      src={
-                        product.imageUrl ||
-                        "https://images.unsplash.com/photo-1447933601403-0c6688de566e"
-                      }
-                      alt={product.name}
-                      className="w-full h-full object-cover"
-                    />
+                  <div className="flex items-center gap-3.5 sm:gap-4 flex-1 min-w-0">
+                    {/* Item Image */}
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0 border border-gray-200">
+                      <img
+                        src={
+                          product.imageUrl ||
+                          "https://images.unsplash.com/photo-1447933601403-0c6688de566e"
+                        }
+                        alt={product.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+
+                    {/* Item Details */}
+                    <div className="flex-1 min-w-0">
+                      <Link
+                        to={`/product/${product.id}`}
+                        className="text-xs sm:text-sm font-bold text-gray-900 hover:text-emerald-700 truncate block transition"
+                      >
+                        {product.name}
+                      </Link>
+                      <p className="text-[11px] sm:text-xs text-gray-500 mt-0.5 truncate">
+                        {product.category} • {product.seller || "Verified Seller"}
+                      </p>
+                      <p className="text-xs font-bold text-emerald-800 mt-1">
+                        ${product.price}.00 each
+                      </p>
+                    </div>
                   </div>
 
-                  {/* Item Details */}
-                  <div className="flex-1 min-w-0">
-                    <Link
-                      to={`/product/${product.id}`}
-                      className="text-sm font-bold text-gray-900 hover:text-emerald-700 truncate block transition"
-                    >
-                      {product.name}
-                    </Link>
-                    <p className="text-xs text-gray-500 mt-0.5">
-                      {product.category} • {product.seller || "Verified Seller"}
-                    </p>
-                    <p className="text-xs font-semibold text-gray-700 mt-1">
-                      ${product.price}.00 each
-                    </p>
-                  </div>
+                  {/* Quantity Stepper & Price Row on mobile */}
+                  <div className="flex items-center justify-between sm:justify-end gap-4 pt-2 sm:pt-0 border-t sm:border-t-0 border-gray-100 flex-shrink-0">
+                    {/* Quantity Stepper */}
+                    <div className="flex items-center border border-gray-300 rounded-lg bg-gray-50 p-0.5">
+                      <button
+                        type="button"
+                        onClick={() => updateQuantity(product.id, qty - 1)}
+                        className="w-7 h-7 rounded bg-white shadow-xs font-bold text-gray-700 hover:bg-gray-100 flex items-center justify-center text-xs"
+                      >
+                        -
+                      </button>
+                      <span className="w-8 text-center font-bold text-xs text-gray-900">
+                        {qty}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => updateQuantity(product.id, qty + 1)}
+                        className="w-7 h-7 rounded bg-white shadow-xs font-bold text-gray-700 hover:bg-gray-100 flex items-center justify-center text-xs"
+                      >
+                        +
+                      </button>
+                    </div>
 
-                  {/* Quantity Stepper */}
-                  <div className="flex items-center border border-gray-300 rounded-lg bg-gray-50 p-0.5">
-                    <button
-                      type="button"
-                      onClick={() => updateQuantity(product.id, qty - 1)}
-                      className="w-7 h-7 rounded bg-white shadow-xs font-bold text-gray-700 hover:bg-gray-100 flex items-center justify-center text-xs"
-                    >
-                      -
-                    </button>
-                    <span className="w-8 text-center font-bold text-xs text-gray-900">
-                      {qty}
-                    </span>
-                    <button
-                      type="button"
-                      onClick={() => updateQuantity(product.id, qty + 1)}
-                      className="w-7 h-7 rounded bg-white shadow-xs font-bold text-gray-700 hover:bg-gray-100 flex items-center justify-center text-xs"
-                    >
-                      +
-                    </button>
-                  </div>
-
-                  {/* Total & Remove */}
-                  <div className="text-right flex flex-col items-end gap-1 flex-shrink-0">
-                    <span className="text-sm font-black text-gray-900">
-                      ${itemTotal}.00
-                    </span>
-                    <button
-                      type="button"
-                      onClick={() => removeFromCart(product.id)}
-                      className="text-xs text-red-500 hover:text-red-700 font-semibold"
-                    >
-                      Remove
-                    </button>
+                    {/* Total & Remove */}
+                    <div className="text-right flex items-center sm:flex-col sm:items-end gap-3 sm:gap-1">
+                      <span className="text-sm font-black text-gray-900">
+                        ${itemTotal}.00
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => removeFromCart(product.id)}
+                        className="text-xs text-red-500 hover:text-red-700 font-semibold"
+                      >
+                        Remove
+                      </button>
+                    </div>
                   </div>
                 </div>
               );

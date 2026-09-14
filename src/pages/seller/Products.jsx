@@ -63,7 +63,7 @@ function Products() {
           </Link>
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5 sm:gap-5">
           {sellerProducts.map((product) => (
             <div
               key={product.id}
@@ -78,30 +78,30 @@ function Products() {
                   alt={product.name}
                   className="w-full h-full object-cover"
                 />
-                <span className="absolute top-2.5 left-2.5 bg-white/90 backdrop-blur-sm text-emerald-800 text-[11px] font-bold px-2 py-0.5 rounded-full border border-emerald-100">
+                <span className="absolute top-2 left-2 bg-white/90 backdrop-blur-sm text-emerald-800 text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded-full border border-emerald-100 truncate max-w-[85%]">
                   {product.category}
                 </span>
               </div>
 
-              <div className="p-4 flex-1 flex flex-col justify-between">
+              <div className="p-3 sm:p-4 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-sm font-bold text-gray-900 line-clamp-1">
+                  <h3 className="text-xs sm:text-sm font-bold text-gray-900 line-clamp-1">
                     {product.name}
                   </h3>
-                  <p className="text-xs text-gray-400 mt-0.5">
+                  <p className="text-[11px] sm:text-xs text-gray-400 mt-0.5 truncate">
                     📍 {product.origin || product.location || "Ethiopia"}
                   </p>
-                  <p className="text-base font-extrabold text-gray-900 mt-2">
+                  <p className="text-sm sm:text-base font-extrabold text-gray-900 mt-1.5">
                     ${product.price}.00
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-gray-100 flex items-center justify-between gap-2 mt-4">
+                <div className="pt-2.5 border-t border-gray-100 flex items-center justify-between gap-1 sm:gap-2 mt-3 text-xs">
                   <Link
                     to={`/product/${product.id}`}
-                    className="text-xs font-semibold text-gray-600 hover:text-emerald-700"
+                    className="text-[11px] sm:text-xs font-semibold text-gray-600 hover:text-emerald-700"
                   >
-                    View in Shop &rarr;
+                    View &rarr;
                   </Link>
                   <button
                     type="button"
@@ -110,7 +110,7 @@ function Products() {
                         deleteProduct(product.id);
                       }
                     }}
-                    className="text-xs font-semibold text-red-600 hover:text-red-700 hover:bg-red-50 px-2 py-1 rounded-md transition"
+                    className="text-[11px] sm:text-xs font-semibold text-red-600 hover:text-red-700 hover:bg-red-50 px-2 py-1 rounded-md transition"
                   >
                     Delete
                   </button>

@@ -163,23 +163,23 @@ function ProductDetails() {
 
             {/* Quantity Stepper & Add to Cart Action */}
             <div className="space-y-4 pt-4 border-t border-gray-100">
-              <div className="flex items-center gap-4">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                 {/* Quantity Control */}
-                <div className="flex items-center border border-gray-300 rounded-xl bg-gray-50 p-1">
+                <div className="flex items-center justify-between sm:justify-start border border-gray-300 rounded-xl bg-gray-50 p-1">
                   <button
                     type="button"
                     onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-                    className="w-8 h-8 rounded-lg bg-white shadow-xs font-bold text-gray-700 hover:bg-gray-100 flex items-center justify-center transition"
+                    className="w-9 h-9 rounded-lg bg-white shadow-xs font-bold text-gray-700 hover:bg-gray-100 flex items-center justify-center transition"
                   >
                     -
                   </button>
-                  <span className="w-10 text-center font-bold text-sm text-gray-900">
+                  <span className="w-12 text-center font-bold text-sm text-gray-900">
                     {quantity}
                   </span>
                   <button
                     type="button"
                     onClick={() => setQuantity((q) => q + 1)}
-                    className="w-8 h-8 rounded-lg bg-white shadow-xs font-bold text-gray-700 hover:bg-gray-100 flex items-center justify-center transition"
+                    className="w-9 h-9 rounded-lg bg-white shadow-xs font-bold text-gray-700 hover:bg-gray-100 flex items-center justify-center transition"
                   >
                     +
                   </button>
@@ -189,7 +189,7 @@ function ProductDetails() {
                 <button
                   type="button"
                   onClick={handleAddToCart}
-                  className={`flex-1 font-bold py-3 px-6 rounded-xl shadow-md transition duration-200 flex items-center justify-center gap-2 text-sm sm:text-base ${
+                  className={`flex-1 font-bold py-3 px-6 rounded-xl shadow-md transition duration-200 flex items-center justify-center gap-2 text-xs sm:text-sm ${
                     added
                       ? "bg-emerald-800 text-white"
                       : "bg-emerald-600 hover:bg-emerald-700 text-white"
@@ -203,7 +203,7 @@ function ProductDetails() {
                 <button
                   type="button"
                   onClick={() => setIsWishlist(!isWishlist)}
-                  className={`p-3 rounded-xl border transition ${
+                  className={`p-3 rounded-xl border transition flex items-center justify-center ${
                     isWishlist
                       ? "bg-red-50 border-red-200 text-red-500"
                       : "bg-gray-50 border-gray-200 text-gray-400 hover:text-red-500"
@@ -216,7 +216,7 @@ function ProductDetails() {
 
               {/* Delivery info */}
               <div className="bg-emerald-50/60 border border-emerald-100 rounded-xl p-3.5 flex items-center gap-3 text-xs text-emerald-900">
-                <span className="text-lg">🚚</span>
+                <span className="text-lg flex-shrink-0">🚚</span>
                 <div>
                   <strong className="block font-bold">Estimated delivery: 7–14 business days</strong>
                   <span className="text-emerald-700">Ships directly from Ethiopia with end-to-end tracking.</span>
@@ -228,11 +228,11 @@ function ProductDetails() {
 
         {/* Tabbed Specifications & Story Section */}
         <div className="mt-12 pt-8 border-t border-gray-200">
-          <div className="flex border-b border-gray-200 gap-8">
+          <div className="flex border-b border-gray-200 gap-4 sm:gap-8 overflow-x-auto pb-1 scrollbar-none whitespace-nowrap">
             <button
               type="button"
               onClick={() => setActiveTab("description")}
-              className={`pb-3 text-sm font-bold transition border-b-2 ${
+              className={`pb-3 text-xs sm:text-sm font-bold transition border-b-2 flex-shrink-0 ${
                 activeTab === "description"
                   ? "border-emerald-600 text-emerald-700"
                   : "border-transparent text-gray-500 hover:text-gray-900"
@@ -243,7 +243,7 @@ function ProductDetails() {
             <button
               type="button"
               onClick={() => setActiveTab("details")}
-              className={`pb-3 text-sm font-bold transition border-b-2 ${
+              className={`pb-3 text-xs sm:text-sm font-bold transition border-b-2 flex-shrink-0 ${
                 activeTab === "details"
                   ? "border-emerald-600 text-emerald-700"
                   : "border-transparent text-gray-500 hover:text-gray-900"
@@ -254,7 +254,7 @@ function ProductDetails() {
             <button
               type="button"
               onClick={() => setActiveTab("reviews")}
-              className={`pb-3 text-sm font-bold transition border-b-2 ${
+              className={`pb-3 text-xs sm:text-sm font-bold transition border-b-2 flex-shrink-0 ${
                 activeTab === "reviews"
                   ? "border-emerald-600 text-emerald-700"
                   : "border-transparent text-gray-500 hover:text-gray-900"

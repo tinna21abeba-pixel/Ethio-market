@@ -89,23 +89,23 @@ function Shipping() {
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
       {/* 3-Step Breadcrumb Bar */}
-      <div className="flex items-center justify-center gap-4 text-xs font-bold text-gray-500 max-w-md mx-auto">
+      <div className="flex items-center justify-center gap-2 sm:gap-4 text-[11px] sm:text-xs font-bold text-gray-500 max-w-md mx-auto">
         <div className="flex items-center gap-1.5 text-emerald-700 font-extrabold">
-          <span className="w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs">
+          <span className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[10px] sm:text-xs">
             1
           </span>
           <span>Shipping</span>
         </div>
-        <span className="text-gray-300">&mdash;&mdash;</span>
+        <span className="text-gray-300">&mdash;</span>
         <div className="flex items-center gap-1.5 text-gray-400">
-          <span className="w-6 h-6 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center text-xs">
+          <span className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center text-[10px] sm:text-xs">
             2
           </span>
           <span>Payment</span>
         </div>
-        <span className="text-gray-300">&mdash;&mdash;</span>
+        <span className="text-gray-300">&mdash;</span>
         <div className="flex items-center gap-1.5 text-gray-400">
-          <span className="w-6 h-6 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center text-xs">
+          <span className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center text-[10px] sm:text-xs">
             3
           </span>
           <span>Review</span>

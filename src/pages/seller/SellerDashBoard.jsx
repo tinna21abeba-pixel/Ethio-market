@@ -42,23 +42,26 @@ function SellerDashboard() {
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="bg-white rounded-3xl border border-gray-200 shadow-md overflow-hidden grid grid-cols-1 lg:grid-cols-5 min-h-[680px]">
         {/* Dark Modern Sidebar matching Mockup Screen 8 */}
-        <aside className="lg:col-span-1 bg-slate-900 text-white p-6 flex flex-col justify-between">
-          <div className="space-y-6">
-            <div className="flex items-center gap-2 pb-6 border-b border-slate-800">
-              <div className="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center text-white font-bold text-sm shadow-xs">
-                🌿
+        <aside className="lg:col-span-1 bg-slate-900 text-white p-5 sm:p-6 flex flex-col justify-between">
+          <div className="space-y-4 sm:space-y-6">
+            <div className="flex items-center justify-between pb-4 sm:pb-6 border-b border-slate-800">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center text-white font-bold text-sm shadow-xs">
+                  🌿
+                </div>
+                <span className="text-sm sm:text-base font-extrabold tracking-tight">
+                  Ethio<span className="text-emerald-400">Merchant</span>
+                </span>
               </div>
-              <span className="text-base font-extrabold tracking-tight">
-                Ethio<span className="text-emerald-400">Merchant</span>
-              </span>
             </div>
 
-            <nav className="space-y-1 text-xs font-semibold">
+            {/* Desktop & Mobile Scrollable Nav */}
+            <nav className="flex lg:flex-col gap-1.5 overflow-x-auto pb-2 lg:pb-0 scrollbar-none text-xs font-semibold whitespace-nowrap">
               <NavLink
                 to="/seller"
                 end
                 className={({ isActive }) =>
-                  `flex items-center gap-3 px-3 py-2.5 rounded-xl transition ${
+                  `flex items-center gap-2 sm:gap-3 px-3 py-2 sm:py-2.5 rounded-xl transition flex-shrink-0 ${
                     isActive
                       ? "bg-emerald-600 text-white shadow-xs"
                       : "text-slate-400 hover:text-white hover:bg-slate-800"
@@ -72,7 +75,7 @@ function SellerDashboard() {
               <NavLink
                 to="/seller/products"
                 className={({ isActive }) =>
-                  `flex items-center gap-3 px-3 py-2.5 rounded-xl transition ${
+                  `flex items-center gap-2 sm:gap-3 px-3 py-2 sm:py-2.5 rounded-xl transition flex-shrink-0 ${
                     isActive
                       ? "bg-emerald-600 text-white shadow-xs"
                       : "text-slate-400 hover:text-white hover:bg-slate-800"
@@ -86,7 +89,7 @@ function SellerDashboard() {
               <NavLink
                 to="/seller/orders"
                 className={({ isActive }) =>
-                  `flex items-center gap-3 px-3 py-2.5 rounded-xl transition ${
+                  `flex items-center gap-2 sm:gap-3 px-3 py-2 sm:py-2.5 rounded-xl transition flex-shrink-0 ${
                     isActive
                       ? "bg-emerald-600 text-white shadow-xs"
                       : "text-slate-400 hover:text-white hover:bg-slate-800"
@@ -100,7 +103,7 @@ function SellerDashboard() {
               <NavLink
                 to="/seller/add-product"
                 className={({ isActive }) =>
-                  `flex items-center gap-3 px-3 py-2.5 rounded-xl transition ${
+                  `flex items-center gap-2 sm:gap-3 px-3 py-2 sm:py-2.5 rounded-xl transition flex-shrink-0 ${
                     isActive
                       ? "bg-emerald-600 text-white shadow-xs"
                       : "text-slate-400 hover:text-white hover:bg-slate-800"
@@ -114,7 +117,7 @@ function SellerDashboard() {
               <NavLink
                 to="/seller/profile"
                 className={({ isActive }) =>
-                  `flex items-center gap-3 px-3 py-2.5 rounded-xl transition ${
+                  `flex items-center gap-2 sm:gap-3 px-3 py-2 sm:py-2.5 rounded-xl transition flex-shrink-0 ${
                     isActive
                       ? "bg-emerald-600 text-white shadow-xs"
                       : "text-slate-400 hover:text-white hover:bg-slate-800"
@@ -127,7 +130,7 @@ function SellerDashboard() {
             </nav>
           </div>
 
-          <div className="pt-6 border-t border-slate-800">
+          <div className="hidden lg:block pt-6 border-t border-slate-800">
             <button
               type="button"
               onClick={handleLogout}

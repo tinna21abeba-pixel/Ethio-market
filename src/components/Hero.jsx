@@ -14,23 +14,23 @@ function Hero() {
           }}
         />
 
-        <div className="relative z-10 max-w-3xl px-6 py-16 sm:px-12 sm:py-24 space-y-6">
-          <div className="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-400/30 rounded-full px-3.5 py-1 text-xs font-semibold text-emerald-300">
+        <div className="relative z-10 max-w-3xl px-5 py-12 sm:px-12 sm:py-20 space-y-5 sm:space-y-6">
+          <div className="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-400/30 rounded-full px-3 py-1 text-[11px] sm:text-xs font-semibold text-emerald-300">
             <span>✨ Direct from Ethiopian Artisans & Roasters</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight text-white">
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-white">
             Connecting Ethiopian Sellers with Global Buyers
           </h1>
 
-          <p className="text-base sm:text-lg text-emerald-100 max-w-xl leading-relaxed">
+          <p className="text-sm sm:text-base lg:text-lg text-emerald-100 max-w-xl leading-relaxed">
             Authentic Ethiopian products. Real people. Global opportunities. Explore specialty single-origin coffee, handcrafted textiles, and heritage spices.
           </p>
 
-          <div className="flex flex-wrap items-center gap-4 pt-2">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
             <Link
               to="/shop"
-              className="bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold px-6 py-3 rounded-xl shadow-lg hover:shadow-emerald-500/25 transition duration-200 flex items-center gap-2 text-sm sm:text-base"
+              className="bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold px-6 py-3 rounded-xl shadow-lg hover:shadow-emerald-500/25 transition duration-200 flex items-center justify-center gap-2 text-xs sm:text-sm"
             >
               <span>Explore Products</span>
               <span>&rarr;</span>
@@ -38,7 +38,7 @@ function Hero() {
 
             <Link
               to="/seller"
-              className="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white font-semibold px-5 py-3 rounded-xl transition text-sm sm:text-base flex items-center gap-2"
+              className="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white font-semibold px-5 py-3 rounded-xl transition text-xs sm:text-sm flex items-center justify-center gap-2"
             >
               <span>▶ Watch Our Story</span>
             </Link>
