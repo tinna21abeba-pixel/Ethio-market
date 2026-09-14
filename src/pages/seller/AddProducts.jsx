@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useProducts } from "../../context/ProductContext";
 import { useAuth } from "../../context/AuthContext";
@@ -14,7 +14,9 @@ function AddProduct() {
     category: "Coffee",
     description: "",
     seller: user?.name || "",
-    location: "Addis Ababa",
+    origin: "Yirgacheffe, Ethiopia",
+    stock: "50",
+    imageUrl: "",
   });
 
   useEffect(() => {
@@ -23,134 +25,188 @@ function AddProduct() {
     }
   }, [user]);
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setProduct((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setProduct((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
     addProduct({
       ...product,
       price: Number(product.price),
+      stock: Number(product.stock) || 30,
       seller: product.seller || user?.name || "Verified Seller",
       sellerId: user?.id || user?.email || `seller_${Date.now()}`,
+      location: product.origin,
     });
 
     navigate("/seller/products");
   };
 
   return (
-    <main className="seller-add-product-page">
-      <div className="seller-header-nav">
-        <h1>Add New Ethiopian Product</h1>
-        <Link to="/seller/products" className="btn-secondary">
-          &larr; Back to My Products
+    <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
+      <div className="flex items-center justify-between pb-4 border-b border-gray-200">
+        <div>
+          <h1 className="text-2xl font-extrabold text-gray-900 tracking-tight">
+            Add New Product Listing
+          </h1>
+          <p className="text-xs text-gray-500">
+            Showcase your authentic Ethiopian specialty goods to buyers globally
+          </p>
+        </div>
+        <Link
+          to="/seller/products"
+          className="text-xs font-bold text-gray-600 hover:text-emerald-700"
+        >
+          &larr; Back to Inventory
         </Link>
       </div>
 
-      <div className="form-card">
-        <form onSubmit={handleSubmit} className="product-form">
-          <div className="form-group">
-            <label htmlFor="name">Product Name *</label>
+      <div className="bg-white p-6 sm:p-8 rounded-2xl border border-gray-200 shadow-xs">
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label className="block text-xs font-bold text-gray-700 mb-1">
+              Product Title *
+            </label>
             <input
               type="text"
-              id="name"
               name="name"
-              placeholder="e.g. Yirgacheffe Special Roast"
+              placeholder="e.g. Ethiopian Yirgacheffe Washed Grade 1"
               value={product.name}
               onChange={handleChange}
+              className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs text-gray-900 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:bg-white"
               required
             />
           </div>
 
-          <div className="form-row">
-            <div className="form-group">
-              <label htmlFor="price">Price ($ USD) *</label>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div>
+              <label className="block text-xs font-bold text-gray-700 mb-1">
+                Price ($ USD) *
+              </label>
               <input
                 type="number"
-                id="price"
                 name="price"
                 min="1"
                 step="0.01"
-                placeholder="25.00"
+                placeholder="18.00"
                 value={product.price}
                 onChange={handleChange}
+                className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs text-gray-900 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:bg-white"
                 required
               />
             </div>
 
-            <div className="form-group">
-              <label htmlFor="category">Category *</label>
+            <div>
+              <label className="block text-xs font-bold text-gray-700 mb-1">
+                Category *
+              </label>
               <select
-                id="category"
                 name="category"
                 value={product.category}
                 onChange={handleChange}
+                className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs text-gray-900 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:bg-white"
                 required
               >
                 <option value="Coffee">Coffee</option>
-                <option value="Traditional Clothing">Traditional Clothing</option>
-                <option value="Food">Food</option>
+                <option value="Honey">Honey</option>
                 <option value="Spices">Spices</option>
-                <option value="Handcrafts">Handcrafts</option>
-                <option value="Jewelry">Jewelry</option>
-                <option value="Other">Other</option>
+                <option value="Grains">Grains</option>
+                <option value="Food">Food</option>
+                <option value="Clothing">Clothing & Textiles</option>
+                <option value="Handicrafts">Handicrafts</option>
+                <option value="Leather">Leather</option>
+                <option value="Seeds">Seeds</option>
               </select>
+            </div>
+
+            <div>
+              <label className="block text-xs font-bold text-gray-700 mb-1">
+                Initial Stock Units
+              </label>
+              <input
+                type="number"
+                name="stock"
+                placeholder="50"
+                value={product.stock}
+                onChange={handleChange}
+                className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs text-gray-900 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:bg-white"
+              />
             </div>
           </div>
 
-          <div className="form-row">
-            <div className="form-group">
-              <label htmlFor="seller">Seller / Brand Name *</label>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label className="block text-xs font-bold text-gray-700 mb-1">
+                Seller / Brand Name *
+              </label>
               <input
                 type="text"
-                id="seller"
                 name="seller"
                 value={product.seller}
                 onChange={handleChange}
+                className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs text-gray-900 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:bg-white"
                 required
               />
             </div>
 
-            <div className="form-group">
-              <label htmlFor="location">Origin / Location *</label>
+            <div>
+              <label className="block text-xs font-bold text-gray-700 mb-1">
+                Origin / Region *
+              </label>
               <input
                 type="text"
-                id="location"
-                name="location"
-                placeholder="e.g. Addis Ababa, Sidama, Harar"
-                value={product.location}
+                name="origin"
+                placeholder="e.g. Sidama, Ethiopia"
+                value={product.origin}
                 onChange={handleChange}
+                className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs text-gray-900 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:bg-white"
                 required
               />
             </div>
           </div>
 
-          <div className="form-group">
-            <label htmlFor="description">Product Description</label>
-            <textarea
-              id="description"
-              name="description"
-              rows="4"
-              placeholder="Describe the authentic quality, heritage, and craftsmanship..."
-              value={product.description}
+          <div>
+            <label className="block text-xs font-bold text-gray-700 mb-1">
+              Image URL
+            </label>
+            <input
+              type="url"
+              name="imageUrl"
+              placeholder="https://images.unsplash.com/..."
+              value={product.imageUrl}
               onChange={handleChange}
+              className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs text-gray-900 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:bg-white"
             />
           </div>
 
-          <div className="form-actions">
-            <button type="submit" className="btn-primary">
-              Publish Product
+          <div>
+            <label className="block text-xs font-bold text-gray-700 mb-1">
+              Product Story & Description
+            </label>
+            <textarea
+              name="description"
+              rows="4"
+              placeholder="Describe the unique tasting notes, traditional harvest methods, and artisan craftsmanship..."
+              value={product.description}
+              onChange={handleChange}
+              className="w-full px-3.5 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-xs text-gray-900 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:bg-white"
+            />
+          </div>
+
+          <div className="pt-4 flex items-center gap-3">
+            <button
+              type="submit"
+              className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-xl text-xs shadow-md transition"
+            >
+              Publish Product Listing &rarr;
             </button>
             <button
               type="button"
-              className="btn-secondary"
               onClick={() => navigate("/seller/products")}
+              className="px-6 py-3 border border-gray-200 text-gray-700 rounded-xl text-xs font-semibold hover:bg-gray-50 transition"
             >
               Cancel
             </button>

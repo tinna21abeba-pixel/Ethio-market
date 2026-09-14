@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import CartProvider from "./context/CartContext";
-import Layout from "./components/LayOut";
+import Layout from "./components/Layout";
 
 import Home from "./components/Home";
 import Shop from "./pages/Shop";
@@ -18,7 +18,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import SellerDashboard from "./pages/seller/SellerDashBoard";
 import SellerProducts from "./pages/seller/Products";
 import AddProduct from "./pages/seller/AddProducts";
-import SellerOrders from "./pages/seller/sellerOrders";
+import SellerOrders from "./pages/seller/SellerOrders";
 import SellerProfile from "./pages/seller/SellerProfile"; 
 import ProductProvider from "./context/ProductContext";
 import OrderProvider from "./context/OrderContext";
