@@ -1,54 +1,51 @@
 import { Link } from "react-router-dom";
+import { useProducts } from "../../context/ProductContext";
 import { useAuth } from "../../context/AuthContext";
 
-function SellerDashboard() {
-  const { user, logout } = useAuth();
+function Products() {
+  const { products, deleteProduct } = useProducts();
+
+  const { user } = useAuth();
+
+  const sellerProducts = products.filter(
+    (product) => product.seller === user.name
+  );
 
   return (
     <main>
-      <h1>Seller Dashboard</h1>
+      <h1>My Products</h1>
 
-      <p>
-        Welcome, {user.name}
-      </p>
+      <Link to="/seller/add-product">
+        Add New Product
+      </Link>
 
-      <nav>
-        <Link to="/seller">
-          Dashboard
-        </Link>
+      {sellerProducts.length === 0 ? (
+        <p>You have no products.</p>
+      ) : (
+        <section>
+          {sellerProducts.map((product) => (
+            <article key={product.id}>
+              <h3>{product.name}</h3>
 
-        <Link to="/seller/products">
-          Products
-        </Link>
+              <p>Price: ${product.price}</p>
 
-        <Link to="/seller/add-product">
-          Add Product
-        </Link>
+              <p>
+                Category: {product.category}
+              </p>
 
-        <Link to="/seller/orders">
-          Orders
-        </Link>
-
-        <Link to="/seller/profile">
-          Profile
-        </Link>
-      </nav>
-
-      <section>
-        <h2>Overview</h2>
-
-        <p>Total Products: 0</p>
-
-        <p>Total Orders: 0</p>
-
-        <p>Total Sales: $0</p>
-      </section>
-
-      <button onClick={logout}>
-        Logout
-      </button>
+              <button
+                onClick={() =>
+                  deleteProduct(product.id)
+                }
+              >
+                Delete
+              </button>
+            </article>
+          ))}
+        </section>
+      )}
     </main>
   );
 }
 
-export default SellerDashboard;
+export default Products;

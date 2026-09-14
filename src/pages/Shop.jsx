@@ -1,11 +1,12 @@
 import React,{useState} from 'react'
-import products from '../data/Product.';
+import { useProducts } from "../context/ProductContext";
 import ProductCard from '../components/ProductCard';
 
 
 
 
 function Shop() {
+  const { products } = useProducts();
   const [search, setSearch]=useState('');
   
   const filteredProducts = products.filter((product) =>

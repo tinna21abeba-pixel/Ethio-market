@@ -1,19 +1,24 @@
 import React from 'react'
-import products from '../data/Product.'
+import { useProducts } from "../context/ProductContext";
 import ProductCard from './ProductCard'
 
 function FeaturedProducts() {
-  return (
-    <div>
-        <h1>Featured Products</h1>
-        <div className='grid'>
-            {products.map((product) => (
-                <ProductCard key={product.id} product={product} />
-            ))}
-        </div>
+  const { products } = useProducts();
 
-    </div>
-  )
+  return (
+    <section>
+      <h2>Featured Ethiopian Products</h2>
+
+      <div>
+        {products.slice(0, 6).map((product) => (
+          <ProductCard
+            key={product.id}
+            product={product}
+          />
+        ))}
+      </div>
+    </section>
+  );
 }
 
 export default FeaturedProducts

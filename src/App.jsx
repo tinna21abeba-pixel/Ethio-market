@@ -20,12 +20,14 @@ import SellerProducts from "./pages/seller/Products";
 import AddProduct from "./pages/seller/AddProducts";
 import SellerOrders from "./pages/seller/sellerOrders";
 import SellerProfile from "./pages/seller/SellerProfile"; 
+import ProductProvider from "./context/ProductContext";
 
 function App() {
   return (
   
   <AuthProvider>
       <CartProvider>
+        <ProductProvider>
         <Routes>
 
           <Route path="/" element={<Layout />}>
@@ -116,6 +118,7 @@ function App() {
           </Route>
 
         </Routes>
+        </ProductProvider>
       </CartProvider>
       
     </AuthProvider>

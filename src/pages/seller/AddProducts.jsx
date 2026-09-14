@@ -1,11 +1,19 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useProducts } from "../../context/ProductContext";
 
 function AddProduct() {
+  const { addProduct } = useProducts();
+
+  const navigate = useNavigate();
+
   const [product, setProduct] = useState({
     name: "",
     price: "",
     category: "",
     description: "",
+    seller: "",
+    location: "",
   });
 
   const handleChange = (event) => {
@@ -20,9 +28,12 @@ function AddProduct() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    console.log("New product:", product);
+    addProduct({
+      ...product,
+      price: Number(product.price),
+    });
 
-    alert("Product added successfully!");
+    navigate("/seller/products");
   };
 
   return (
@@ -30,6 +41,7 @@ function AddProduct() {
       <h1>Add Product</h1>
 
       <form onSubmit={handleSubmit}>
+
         <div>
           <label>Product Name</label>
 
@@ -67,6 +79,30 @@ function AddProduct() {
         </div>
 
         <div>
+          <label>Seller Name</label>
+
+          <input
+            type="text"
+            name="seller"
+            value={product.seller}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div>
+          <label>Location</label>
+
+          <input
+            type="text"
+            name="location"
+            value={product.location}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div>
           <label>Description</label>
 
           <textarea
@@ -79,6 +115,7 @@ function AddProduct() {
         <button type="submit">
           Add Product
         </button>
+
       </form>
     </main>
   );
