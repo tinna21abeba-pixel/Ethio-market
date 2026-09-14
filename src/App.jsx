@@ -21,6 +21,8 @@ import AddProduct from "./pages/seller/AddProducts";
 import SellerOrders from "./pages/seller/sellerOrders";
 import SellerProfile from "./pages/seller/SellerProfile"; 
 import ProductProvider from "./context/ProductContext";
+import OrderProvider from "./context/OrderContext";
+import Orders from "./pages/Orders";
 
 function App() {
   return (
@@ -28,6 +30,7 @@ function App() {
   <AuthProvider>
       <CartProvider>
         <ProductProvider>
+          <OrderProvider>
         <Routes>
 
           <Route path="/" element={<Layout />}>
@@ -115,9 +118,18 @@ function App() {
             
             {/* Catch-all 404 fallback to home */}
             <Route path="*" element={<Navigate to="/" replace />} />
+            <Route
+  path="/orders"
+  element={
+    <ProtectedRoute>
+      <Orders />
+    </ProtectedRoute>
+  }
+/>
           </Route>
 
         </Routes>
+        </OrderProvider>
         </ProductProvider>
       </CartProvider>
       

@@ -17,6 +17,10 @@ function Header() {
         <NavLink to="/login">Login</NavLink>
         <NavLink to="/register">Register</NavLink>
         <NavLink to="/cart">cart {cart.length}</NavLink>
+         <NavLink to="/orders">
+    My Orders
+  </NavLink>
+
       </nav>
 
     </header>

@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import { useOrders } from "../context/OrderContext";
+import { useAuth } from "../context/AuthContext";
 
 function Shipping() {
   const { cart, clearCart } = useCart();
-
+const { createOrder } = useOrders();
+const { user } = useAuth();
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -26,16 +29,31 @@ function Shipping() {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    clearCart();
+  const subtotal = cart.reduce(
+    (total, product) => total + product.price,
+    0
+  );
 
-    navigate("/order-confirmation");
-  };
+  const shipping = cart.length > 0 ? 5 : 0;
 
-  if (cart.length === 0) {
-    return <p>Your cart is empty.</p>;
-  }
+  const total = subtotal + shipping;
+
+  createOrder({
+    buyer: user ? user.name : formData.fullName,
+    buyerEmail: user ? user.email : formData.email,
+    shippingAddress: formData,
+    items: cart,
+    subtotal,
+    shipping,
+    total,
+  });
+
+  clearCart();
+
+  navigate("/order-confirmation");
+};
 
   return (
     <main>

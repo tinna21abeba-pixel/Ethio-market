@@ -1,10 +1,11 @@
 import { useParams } from "react-router-dom";
-import products from "../data/Product";
+import { useProducts } from "../context/ProductContext";
 import { useCart } from "../context/CartContext";
-
 
 function ProductDetails() {
   const { id } = useParams();
+
+  const { products } = useProducts();
   const { addToCart } = useCart();
 
   const product = products.find(
@@ -12,7 +13,11 @@ function ProductDetails() {
   );
 
   if (!product) {
-    return <h1>Product not found</h1>;
+    return (
+      <main>
+        <h1>Product not found</h1>
+      </main>
+    );
   }
 
   return (
@@ -28,11 +33,13 @@ function ProductDetails() {
       <p>Location: {product.location}</p>
 
       <p>
-        This product is available from a verified
-        Ethiopian seller.
+        {product.description ||
+          "This product is available from a verified Ethiopian seller."}
       </p>
 
-      <button onClick={()=>addToCart(product)}>Add to Cart</button>
+      <button onClick={() => addToCart(product)}>
+        Add to Cart
+      </button>
     </main>
   );
 }
