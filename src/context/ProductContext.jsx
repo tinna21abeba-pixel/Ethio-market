@@ -10,12 +10,19 @@ const ProductContext = createContext();
 
 function ProductProvider({ children }) {
   const [products, setProducts] = useState(() => {
-    const savedProducts =
-      localStorage.getItem("ethioProducts");
-
-    return savedProducts
-      ? JSON.parse(savedProducts)
-      : initialProducts;
+    const savedProducts = localStorage.getItem("ethioProducts");
+    if (savedProducts) {
+      try {
+        const parsed = JSON.parse(savedProducts);
+        // If savedProducts only has the old initial list (< 20 items), upgrade to full 20 products
+        if (Array.isArray(parsed) && parsed.length >= initialProducts.length) {
+          return parsed;
+        }
+      } catch (e) {
+        console.error("Error loading products from localStorage", e);
+      }
+    }
+    return initialProducts;
   });
 
   const addProduct = (product) => {

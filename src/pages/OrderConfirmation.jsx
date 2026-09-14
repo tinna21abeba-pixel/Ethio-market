@@ -1,24 +1,30 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function OrderConfirmation() {
+  const location = useLocation();
+  const orderId = location.state?.orderId;
+
   return (
-    <main>
-      <h1>Order Confirmed!</h1>
+    <main className="confirmation-page">
+      <div className="confirmation-card">
+        <div className="confirmation-icon">✓</div>
+        <h1>Order Confirmed!</h1>
 
-      <p>
-        Thank you for your order.
-      </p>
+        {orderId && <p className="order-id-badge">Order ID: #{orderId}</p>}
 
-      <p>
-        Your order has been successfully placed.
-      </p>
+        <p className="confirmation-msg">
+          Thank you for your order! Your purchase was placed successfully and the seller has been notified.
+        </p>
 
-      <Link to="/shop">
-        Continue Shopping
-      </Link>
-      <Link to="/">
-        Back to Home
-      </Link>
+        <div className="confirmation-actions">
+          <Link to="/orders" className="btn-primary">
+            View / Track My Orders
+          </Link>
+          <Link to="/shop" className="btn-secondary">
+            Continue Shopping
+          </Link>
+        </div>
+      </div>
     </main>
   );
 }
