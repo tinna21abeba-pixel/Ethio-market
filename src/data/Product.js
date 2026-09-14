@@ -39,7 +39,7 @@ const products = [
     seller: "Buna House",
     sellerId: "seller_buna",
     stock: 40,
-    imageUrl: "https://theonlinecoffeeshop.com/cdn/shop/products/P1100217_2400x.jpg?v=1656598942"
+    imageUrl: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=800&q=80"
   },
   {
     id: 4,
@@ -53,7 +53,7 @@ const products = [
     seller: "Buna House",
     sellerId: "seller_buna",
     stock: 35,
-    imageUrl: "https://images.unsplash.com/photo-1447933601403-0c6688de566e"
+    imageUrl: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=800&q=80"
   },
   {
     id: 5,
@@ -81,7 +81,7 @@ const products = [
     seller: "Highland Honey",
     sellerId: "seller_highland",
     stock: 25,
-    imageUrl: "https://www.kibeb.com/cdn/shop/files/ethiopian-white-honey.jpg"
+    imageUrl: "https://tse1.mm.bing.net/th/id/OIP.BwHpzdXM-fDwL-m-dy8slAHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
   },
   {
     id: 7,
@@ -109,7 +109,7 @@ const products = [
     seller: "Addis Spices",
     sellerId: "seller_spices",
     stock: 60,
-    imageUrl: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d"
+    imageUrl: "https://tse1.mm.bing.net/th/id/OIP.mYFaGUZZ7Czs71VwgX1uNgHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
   },
   {
     id: 9,
@@ -123,7 +123,7 @@ const products = [
     seller: "Addis Spices",
     sellerId: "seller_spices",
     stock: 45,
-    imageUrl: "https://images.unsplash.com/photo-1532336414038-cf19250c5757"
+    imageUrl: "https://images.unsplash.com/photo-1532336414038-cf19250c5757?auto=format&fit=crop&w=800&q=80"
   },
   {
     id: 10,
@@ -137,7 +137,7 @@ const products = [
     seller: "Injera House",
     sellerId: "seller_injera",
     stock: 100,
-    imageUrl: "https://images.unsplash.com/photo-1586201375761-83865001e31c"
+    imageUrl: "https://tse3.mm.bing.net/th/id/OIP.uuHtc_tSKbmb0FMC2M32rwHaFW?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
   },
   {
     id: 11,
@@ -151,7 +151,7 @@ const products = [
     seller: "Injera House",
     sellerId: "seller_injera",
     stock: 70,
-    imageUrl: "https://images.unsplash.com/photo-1505253716362-afaea1d3d1af"
+    imageUrl: "https://cdn11.bigcommerce.com/s-7gw5qujusi/images/stencil/1280x1280/products/360/1398/102490__66614.1719401345.jpg?c=1"
   },
   {
     id: 12,
@@ -165,7 +165,7 @@ const products = [
     seller: "Injera House",
     sellerId: "seller_injera",
     stock: 55,
-    imageUrl: "https://images.unsplash.com/photo-1601050690597-df0568f70950"
+    imageUrl: "https://tse4.mm.bing.net/th/id/OIP.xfC5kW0MKAcIOglYWlKY5AAAAA?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
   },
   {
     id: 13,
@@ -179,7 +179,7 @@ const products = [
     seller: "Addis Spices",
     sellerId: "seller_spices",
     stock: 90,
-    imageUrl: "https://images.unsplash.com/photo-1588252303782-cb80119abd6d"
+    imageUrl: "https://images.unsplash.com/photo-1588252303782-cb80119abd6d?auto=format&fit=crop&w=800&q=80"
   },
   {
     id: 14,
@@ -193,7 +193,7 @@ const products = [
     seller: "Addis Spices",
     sellerId: "seller_spices",
     stock: 65,
-    imageUrl: "https://images.unsplash.com/photo-1608797178974-15b35a64ede9"
+    imageUrl: "https://images.unsplash.com/photo-1608797178974-15b35a64ede9?auto=format&fit=crop&w=800&q=80"
   },
   {
     id: 15,
@@ -207,7 +207,7 @@ const products = [
     seller: "Habesha Fashion",
     sellerId: "seller_habesha",
     stock: 20,
-    imageUrl: "https://images.unsplash.com/photo-1601924994987-69e26d50dc26"
+    imageUrl: "https://tse3.mm.bing.net/th/id/OIP.uHfH0ODT5kIXAcg7dv3qtwHaIf?r=0&w=1307&h=1500&rs=1&pid=ImgDetMain&o=7&rm=3"
   },
   {
     id: 16,
@@ -221,7 +221,7 @@ const products = [
     seller: "Heritage Crafts",
     sellerId: "seller_heritage",
     stock: 15,
-    imageUrl: "https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d"
+    imageUrl: "https://img.freepik.com/free-photo/top-view-mixed-different-pasta-with-empty-basket_176474-687.jpg"
   },
   {
     id: 17,
@@ -235,7 +235,7 @@ const products = [
     seller: "Heritage Crafts",
     sellerId: "seller_heritage",
     stock: 18,
-    imageUrl: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62"
+    imageUrl: "https://www.oneworldprojects.net/images/database/3974-Mathi-Kalamkari-Shoulder-Bags-India-Fair-Trade-SIPA.jpg"
   },
   {
     id: 18,
@@ -249,7 +249,7 @@ const products = [
     seller: "Heritage Crafts",
     sellerId: "seller_heritage",
     stock: 12,
-    imageUrl: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085"
+    imageUrl: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80"
   },
   {
     id: 19,
@@ -263,7 +263,7 @@ const products = [
     seller: "Heritage Crafts",
     sellerId: "seller_heritage",
     stock: 20,
-    imageUrl: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd"
+    imageUrl: "https://tse1.mm.bing.net/th/id/OIP.Pn7r3qwAkf4kFl1fFIIZ6wHaL4?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
   },
   {
     id: 20,
@@ -277,7 +277,149 @@ const products = [
     seller: "Addis Spices",
     sellerId: "seller_spices",
     stock: 70,
-    imageUrl: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d"
+    imageUrl: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80"
+  },
+
+  // ---- New: Ethiopian Traditional Clothing & Handicrafts ----
+  {
+    id: 21,
+    name: "Habesha Kemis (Women's)",
+    category: "Clothing",
+    price: 90,
+    currency: "USD",
+    description: "Handwoven white cotton dress with colorful tibeb embroidery along the hem, worn at holidays and formal events.",
+    origin: "Ethiopia",
+    location: "Shiro Meda, Addis Ababa, Ethiopia",
+    seller: "Habesha Fashion",
+    sellerId: "seller_habesha",
+    stock: 15,
+    imageUrl: "https://tse2.mm.bing.net/th/id/OIP.S7JnDRD_tl-Ici_rRRqWTQHaHa?r=0&w=1000&h=1000&rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    id: 22,
+    name: "Habesha Kemis (Men's Shirt)",
+    category: "Clothing",
+    price: 60,
+    currency: "USD",
+    description: "Traditional handwoven cotton shirt with tilet trim at the collar and cuffs.",
+    origin: "Ethiopia",
+    location: "Debre Berhan, Ethiopia",
+    seller: "Habesha Fashion",
+    sellerId: "seller_habesha",
+    stock: 22,
+    imageUrl: "https://ae01.alicdn.com/kf/HTB11sa9XODxK1Rjy1zcq6yGeXXaH/men-african-traditional-clothes-fashion-designers-Robe-Africaine-bazin-embroidery-Clothing-Dashiki-afrikanische-herrenbekleidung.jpg"
+  },
+  {
+    id: 23,
+    name: "Netela Shawl",
+    category: "Clothing",
+    price: 30,
+    currency: "USD",
+    description: "Light handwoven cotton shawl with tibeb-bordered edges, traditionally draped over the shoulders.",
+    origin: "Ethiopia",
+    location: "Gondar, Ethiopia",
+    seller: "Habesha Fashion",
+    sellerId: "seller_habesha",
+    stock: 28,
+    imageUrl: "https://i.etsystatic.com/52111333/r/il/c0987c/7244040752/il_1080xN.7244040752_swpk.jpg"
+  },
+  {
+    id: 24,
+    name: "Gabi (Traditional Cotton Wrap)",
+    category: "Clothing",
+    price: 48,
+    currency: "USD",
+    description: "Thick, multi-layered handwoven cotton wrap worn for warmth in the highlands and often given as a gift.",
+    origin: "Ethiopia",
+    location: "Amhara Region, Ethiopia",
+    seller: "Habesha Fashion",
+    sellerId: "seller_habesha",
+    stock: 17,
+    imageUrl: "https://tse3.mm.bing.net/th/id/OIP.pD7mHrp4HTupnO8XRpkkYQHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    id: 25,
+    name: "Ethiopian Traditional Sandals",
+    category: "Clothing",
+    price: 22,
+    currency: "USD",
+    description: "Handmade leather sandals crafted using traditional Ethiopian techniques.",
+    origin: "Ethiopia",
+    location: "Addis Ababa, Ethiopia",
+    seller: "Heritage Crafts",
+    sellerId: "seller_heritage",
+    stock: 30,
+    imageUrl: "https://tse2.mm.bing.net/th/id/OIP.sevP1Bw2OcRwb5jUzbRVqwHaGl?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    id: 26,
+    name: "Handcrafted Ethiopian Silver Cross",
+    category: "Handicrafts",
+    price: 38,
+    currency: "USD",
+    description: "Intricately etched Lalibela-style silver cross pendant, handcrafted by local silversmiths.",
+    origin: "Ethiopia",
+    location: "Lalibela, Ethiopia",
+    seller: "Heritage Crafts",
+    sellerId: "seller_heritage",
+    stock: 25,
+    imageUrl: "https://tse2.mm.bing.net/th/id/OIP.DiiVDQME5ckMKPyrVECL3QHaDY?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    id: 27,
+    name: "Hand-Carved Wooden Ethiopian Cross",
+    category: "Handicrafts",
+    price: 20,
+    currency: "USD",
+    description: "Traditional wooden cross carved by hand in a distinctive Ethiopian Orthodox pattern.",
+    origin: "Ethiopia",
+    location: "Axum, Ethiopia",
+    seller: "Heritage Crafts",
+    sellerId: "seller_heritage",
+    stock: 32,
+    imageUrl: "https://tse2.mm.bing.net/th/id/OIP.HJRpYR5Fos9VbShxIEZeoAHaHa?r=0&w=2000&h=2000&rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    id: 28,
+    name: "Handwoven Ethiopian Rug",
+    category: "Handicrafts",
+    price: 75,
+    currency: "USD",
+    description: "Colorful handwoven cotton floor rug made using traditional narrow-loom weaving.",
+    origin: "Ethiopia",
+    location: "Dorze, Ethiopia",
+    seller: "Heritage Crafts",
+    sellerId: "seller_heritage",
+    stock: 10,
+    imageUrl: "https://img.freepik.com/premium-photo/closeup-handwoven-wool-rug_632261-28877.jpg"
+  },
+  {
+    id: 29,
+    name: "Ethiopian Mesob (Woven Table Basket)",
+    category: "Handicrafts",
+    price: 85,
+    currency: "USD",
+    description: "Traditional handwoven straw table used to serve injera during family meals and ceremonies.",
+    origin: "Ethiopia",
+    location: "Harar, Ethiopia",
+    seller: "Heritage Crafts",
+    sellerId: "seller_heritage",
+    stock: 8,
+    imageUrl: "https://th.bing.com/th/id/R.7686c9aa2f121744e0f33891da0ebaa1?rik=hMe3MeSHMdtRYg&pid=ImgRaw&r=0"
+  },
+  {
+    id: 30,
+    name: "Hand-Carved Wooden Stool (Ethiopian)",
+    category: "Handicrafts",
+    price: 40,
+    currency: "USD",
+    description: "Traditional low wooden stool carved from a single piece of highland timber.",
+    origin: "Ethiopia",
+    location: "Jimma, Ethiopia",
+    seller: "Heritage Crafts",
+    sellerId: "seller_heritage",
+    stock: 14,
+    imageUrl: "https://tse1.mm.bing.net/th/id/OIP.eCNwi22dDzOdHzu4LPU_wAHaFK?r=0&w=900&h=628&rs=1&pid=ImgDetMain&o=7&rm=3"
   }
 ];
 
